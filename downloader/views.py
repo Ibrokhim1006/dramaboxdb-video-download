@@ -66,7 +66,7 @@ class DownloadVideo(APIView):
                 with open(video_file_path, 'wb') as f:
                     for chunk in video_response.iter_content(chunk_size=1024):
                         f.write(chunk)
-                return JsonResponse({'success': True, 'video_url': video_file_path})
+                return JsonResponse({'success': True, 'video_url': video_file_path, 'download': 'http://185.225.34.187:9000/video/video.mp4'})
             else:
                 return JsonResponse({'success': False, 'error': 'Video yuklab olishda xatolik yuz berdi'})
 
